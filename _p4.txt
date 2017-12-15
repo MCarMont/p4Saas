@@ -1,0 +1,5 @@
+#logo, #title, .float-block, #prof, #prof img, #texto_inicio, #footer, #logo_footer, #footer_izqda, #titulo_horario, #clases, #titulo_clase, .bloque_clases div, .bloque_clases div img, #profesores, #titulo_profesores, .bloque_profesores div,
+ .bloque_profesores div img, #titulo_contacto, #mapa, #texto_contacto, #enlaces_contacto 
+{
+float:left;
+}

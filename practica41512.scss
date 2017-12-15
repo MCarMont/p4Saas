@@ -1,0 +1,352 @@
+//@import 'float';
+@mixin margenes($margin, $padding){
+ margin: $margin;;
+ padding: $padding;
+}
+@mixin posicionamiento($lr){
+float: $lr;
+}
+@mixin bordes($radio, $anchoRadio, $estiloRadio, $colorRadio){
+  border-radius: $radio;
+  border-width:$anchoRadio;
+  border-style: $estiloRadio;
+  border-color: $colorRadio;
+}
+
+$ancho:100%;
+$fontElegida: 'Londrina Solid', cursive;
+$negro:black;
+$blanco:white;
+$azul:#316592;
+$rojo:#F85035;
+$naranja:#F28705;
+$amarillo:rgb(246, 193, 39);
+$verde:#2DB15B;
+
+body {
+  width: $ancho;
+  color: $negro;
+  font-family:$fontElegida;
+  @include margenes((0),0);
+}
+
+/*logotipo*/
+
+header {
+  height: 120px;
+}
+
+#logo {
+  @include margenes(0px, (15px, 0px, 0px, 60px));
+  width:$ancho*0.07;
+}
+
+#title {
+  width: 120px;
+  @include margenes(0px, (0px, 0px, 0px, 20px));
+  color: $azul;
+}
+
+/*menú*/
+
+.nav li {
+  list-style: none;
+  background: $azul;
+  display: inline;
+  @include posicionamiento(right);
+  @include margenes((30px, 0px, 0px, 0px),14px);
+  a {
+    color: $blanco;
+    text-decoration: none;
+    display: inline-block;
+  }
+  &:hover {
+    background-color: dodgerblue;
+  }
+}
+
+/*INICIO*/
+
+.float-block {
+  width: $ancho;
+}
+
+#slider img {
+  width: $ancho;
+}
+
+#iconos {
+  width:$ancho;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+  div img {
+    width: 70px;
+    display: block;
+    @include margenes((80px, 80px, 0px, 80px), 0px);
+    background-color: $rojo;
+    @include bordes(50px, 10px, solid, transparent);
+    &:hover {
+      background-color: $naranja;
+    }
+  }
+  span {
+    line-height: 30px;
+    text-transform: uppercase;
+    color: $negro;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#linea {
+  width: $ancho*0.8;
+  height: 20px;
+  @include margenes((0, 0, 0, 10%), 0px);
+  @include bordes(10px, 0, 0, 0);
+  background-color: $azul;
+}
+
+#prof {
+  width: $ancho;
+  @include margenes(0,(50px, 0, 20px, 0));
+  img {
+    width: $ancho*0.25;
+    @include bordes(50%, 0, 0, 0);
+    @include margenes((0, 0, 0, 12%), 0px);
+  }
+}
+
+#texto_inicio {
+  width: $ancho*0.5;
+  h3 {
+    font-size: 2em;
+    text-align: center;
+  }
+  span {
+    text-align: center;
+    @include posicionamiento(left);
+    @include margenes((0, 0, 0, 5%), 0px);
+  }
+}
+
+#footer {
+  width: $ancho;
+  background-color: $azul;
+  @include margenes(0,(0px, 0, 20px, 0));
+}
+
+#logo_footer {
+  @include margenes(0,(10px, 0, 50px, 0));
+  width: $ancho*0.2;
+}
+
+#footer_izqda {
+  width: $ancho*0.3;
+  div {
+    @include posicionamiento(left);
+    @include margenes(0,20px);
+    width: $ancho*0.15;
+    color:$blanco;
+    letter-spacing: 0.5px;
+  }
+}
+
+#footer_dcha {
+  text-align: center;
+  @include posicionamiento(right);
+  @include margenes(0,(20px, 30px, 0, 0));
+  color:$blanco;
+  letter-spacing: 0.5px;
+}
+
+/*--PÁGINA HORARIOS--*/
+
+#slider2 img {
+  width: $ancho;
+}
+
+#titulo_horario {
+  width: $ancho;
+  text-align: center;
+}
+
+#horario {
+  width: $ancho;
+  @include margenes(0,(20px, 0, 20px, 0));
+}
+
+#tabla_horarios {
+  border-collapse: collapse;
+  width: $ancho*0.7;
+  @include margenes((0, 0, 0, 15%), 0);
+  table-layout: fixed;
+}
+
+.tabla tr td {
+  border: 2px solid $blanco;
+  text-align: center;
+  @include margenes(0, (40px, 10px, 40px, 10px));
+  color: $blanco;
+  &:hover {
+    background-color: $amarillo;
+  }
+}
+
+.naranja {
+  background-color: $naranja;
+}
+
+.amarillo {
+  background-color: $amarillo;
+}
+
+.rojo {
+  background-color: $rojo;
+}
+
+.azul {
+  background-color: $azul;
+}
+
+.verde {
+  background-color: $verde;
+}
+
+/*--PAGINA CLASES--*/
+
+#slider3 img {
+  width: $ancho;
+}
+
+#clases {
+  width: $ancho;
+}
+
+#titulo_clase {
+  width: $ancho;
+  text-align: center;
+}
+
+.bloque_clases {
+  @include margenes((0, 8%, 0, 8%), (0, 0, 0, 50px));
+  div {
+    img {
+      width: $ancho*0.8;
+      @include margenes((0, 30px, 0, 0),0);
+      @include bordes(1px, 0, 0, 0)
+    }
+    width: $ancho*0.3;
+    @include margenes((0, 0, 0, 20px),0);
+  }
+}
+
+.subt {
+  color: $naranja;
+}
+
+#class1, #class4 {
+   @include margenes((0, 20px, 0, 0),0);
+}
+
+/*--PAGINA PROFESORES--*/
+
+#slider4 img {
+  width: $ancho;
+}
+
+#profesores {
+  width: $ancho;
+}
+
+#titulo_profesores {
+  width: $ancho;
+  text-align: center;
+}
+
+.bloque_profesores {
+  @include margenes((0, 8%, 0, 12%),0);
+  div {
+    width: $ancho*0.2;
+    @include margenes((0, 0, 0, 20px),10px);
+    img {
+      width: $ancho*0.7;
+      @include margenes((0, 30px, 0, ),0);
+      @include bordes(80px, 0, 0, 0)
+    }
+  }
+}
+
+/*--PAGINA CONTACTO--*/
+
+#franja_contacto {
+  background-color: $verde;
+  width: $ancho;
+  @include margenes((20px, 0, 20px, 0),0);
+  height: 100px;
+}
+
+#texto_franja {
+  display: flex;
+  justify-content: center;
+  @include margenes(0,(15px, 0, 0, 0));
+  color:$blanco;
+}
+
+#titulo_contacto {
+  width: $ancho;
+  text-align: center;
+}
+
+#mapa {
+  width: $ancho*0.3;
+  @include margenes((0, 0, 0, 18%),0);
+  border: 1px solid $negro;
+}
+
+#bloque_contacto {
+  @include margenes(0,(0, 0, 20px, 0));
+}
+
+#texto_contacto {
+  width: $ancho*0.5;
+  @include margenes((0, 0, 0, 20px), 0);
+  h3 {
+    font-size: 2em;
+    color: #F28705;
+    @include margenes((15px, 0, 15px, 0), 0);
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    height: 30px;
+  }
+  img {
+    width: $ancho*0.04;
+    @include posicionamiento(left);
+  }
+  span {
+   @include posicionamiento(left);
+  }
+}
+
+#enlaces_contacto {
+  width: $ancho*0.5;
+  @include margenes((0, 0, 0, 20px), 0);
+  h3 {
+    font-size: 2em;
+    color: $naranja;
+    @include margenes((15px, 0, 15px, 0), 0);
+  }
+  ul {
+    @include margenes(0,(0,0,0,60px));
+  }
+  a {
+    text-decoration: none;
+    color: $negro;
+    &:visited {
+      color:$azul;
+    }
+  }
+}
